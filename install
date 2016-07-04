@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case "$1" in
+	vim)
+		cd vim/
+		./configure --prefix=$HOME/.local
+		make
+		make install
+		;;
+	curl)
+		cd curl/
+		./buildconf
+		./configure --prefix=$HOME/.local
+		make
+		make install
+		;;
+	git)
+		cd git/
+		make configure
+		./configure --prefix=$HOME/.local
+		make
+		make install
+		;;
+	*)
+		echo You must specify an argument.
+		;;
+esac
