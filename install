@@ -22,6 +22,6 @@ case "$1" in
 		make install
 		;;
 	*)
-		echo You must specify an argument.
+		echo You must specify a valid argument.
 		;;
 esac
