@@ -1,22 +1,23 @@
 #!/bin/sh
 
+INSTALL_LOCATION=$HOME/.local
 case "$1" in
 	vim)
 		cd vim/
-		./configure --prefix=$HOME/.local
+		./configure --prefix=$INSTALL_LOCATION
 		make
 		make install
 		;;
 	curl)
 		cd curl/
 		./buildconf
-		./configure --prefix=$HOME/.local
+		./configure --prefix=$INSTALL_LOCATION
 		make
 		make install
 		;;
 	git)
 		cd git/
-		CPPFLAGS="-I $HOME/.local/include" LDFLAGS="-L$HOME/.local/lib" ./configure --prefix=$HOME/.local
+		CPPFLAGS="-I $INSTALL_LOCATION/include" LDFLAGS="-L$INSTALL_LOCATION/lib" ./configure --prefix=$INSTALL_LOCATION
 		make
 		make install
 		;;
