@@ -16,8 +16,7 @@ case "$1" in
 		;;
 	git)
 		cd git/
-		make configure
-		./configure --prefix=$HOME/.local
+		CPPFLAGS="-I $HOME/.local/include" LDFLAGS="-L$HOME/.local/lib" ./configure --prefix=$HOME/.local
 		make
 		make install
 		;;
