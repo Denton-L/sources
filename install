@@ -1,25 +1,40 @@
 #!/bin/sh
 
 INSTALL_LOCATION=$HOME/.local
+SOURCES=`pwd`
+
+install_vim () {
+	cd $SOURCES/vim/
+	./configure --prefix=$INSTALL_LOCATION
+	make
+	make install
+}
+
+install_curl () {
+	cd $SOURCES/curl/
+	./buildconf
+	./configure --prefix=$INSTALL_LOCATION
+	make
+	make install
+}
+
+# curl is a dependency
+install_git () {
+	cd $SOURCES/git/
+	CPPFLAGS="-I $INSTALL_LOCATION/include" LDFLAGS="-L$INSTALL_LOCATION/lib" ./configure --prefix=$INSTALL_LOCATION
+	make
+	make install
+}
+
 case "$1" in
 	vim)
-		cd vim/
-		./configure --prefix=$INSTALL_LOCATION
-		make
-		make install
+		install_vim
 		;;
 	curl)
-		cd curl/
-		./buildconf
-		./configure --prefix=$INSTALL_LOCATION
-		make
-		make install
+		install_curl
 		;;
 	git)
-		cd git/
-		CPPFLAGS="-I $INSTALL_LOCATION/include" LDFLAGS="-L$INSTALL_LOCATION/lib" ./configure --prefix=$INSTALL_LOCATION
-		make
-		make install
+		install_git
 		;;
 	*)
 		echo You must specify a valid argument.
