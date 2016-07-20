@@ -26,11 +26,17 @@ install_git () {
 	make install
 }
 
+install_thefuck () {
+	cd $SOURCES/thefuck
+	pip install --user thefuck
+}
+
 case "$1" in
 	all)
 		install_vim
 		install_curl
 		install_git
+		install_thefuck
 		;;
 	vim)
 		install_vim
@@ -40,6 +46,9 @@ case "$1" in
 		;;
 	git)
 		install_git
+		;;
+	thefuck)
+		install_thefuck
 		;;
 	*)
 		echo You must specify a valid argument.
