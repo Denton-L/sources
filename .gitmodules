@@ -10,6 +10,3 @@
 	path = curl
 	url = https://github.com/curl/curl.git
 	branch = master
-[submodule "thefuck"]
-	path = thefuck
-	url = https://github.com/nvbn/thefuck.git

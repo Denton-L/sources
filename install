@@ -27,7 +27,6 @@ install_git () {
 }
 
 install_thefuck () {
-	cd $SOURCES/thefuck
 	pip install --user thefuck
 }
 
