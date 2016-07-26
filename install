@@ -27,7 +27,7 @@ install_git () {
 }
 
 install_thefuck () {
-	pip install --user thefuck
+	pip install --user thefuck --upgrade
 }
 
 case "$1" in
