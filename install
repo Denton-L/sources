@@ -30,12 +30,17 @@ install_thefuck () {
 	pip install --user thefuck --upgrade
 }
 
+install_virtualenv () {
+	pip install --user virtualenv --upgrade
+}
+
 case "$1" in
 	all)
 		install_vim
 		install_curl
 		install_git
 		install_thefuck
+		install_virtualenv
 		;;
 	vim)
 		install_vim
@@ -48,6 +53,9 @@ case "$1" in
 		;;
 	thefuck)
 		install_thefuck
+		;;
+	virtualenv)
+		install_virtualenv
 		;;
 	*)
 		echo You must specify a valid argument.
