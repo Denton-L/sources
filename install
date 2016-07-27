@@ -27,11 +27,11 @@ install_git () {
 }
 
 install_thefuck () {
-	pip install --user thefuck --upgrade
+	pip3 install --user thefuck --upgrade
 }
 
 install_virtualenv () {
-	pip install --user virtualenv --upgrade
+	pip3 install --user virtualenv --upgrade
 }
 
 case "$1" in
