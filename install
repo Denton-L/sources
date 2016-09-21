@@ -6,7 +6,7 @@ SOURCES=`pwd`
 install_vim () {
 	cd $SOURCES/vim/
 	./configure --prefix=$INSTALL_LOCATION
-	make
+	make -j
 	make install
 }
 
@@ -14,7 +14,7 @@ install_curl () {
 	cd $SOURCES/curl/
 	./buildconf
 	./configure --prefix=$INSTALL_LOCATION
-	make
+	make -j
 	make install
 }
 
@@ -22,7 +22,7 @@ install_curl () {
 install_git () {
 	cd $SOURCES/git/
 	CPPFLAGS="-I $INSTALL_LOCATION/include" LDFLAGS="-L$INSTALL_LOCATION/lib" ./configure --prefix=$INSTALL_LOCATION
-	make
+	make -j
 	make install
 }
 
