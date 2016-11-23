@@ -26,10 +26,6 @@ install_git () {
 	make install
 }
 
-install_thefuck () {
-	pip3 install --user thefuck --upgrade
-}
-
 install_virtualenv () {
 	pip3 install --user virtualenv --upgrade
 }
