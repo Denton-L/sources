@@ -21,6 +21,7 @@ install_curl () {
 # curl is a dependency
 install_git () {
 	cd $SOURCES/git/
+	make configure
 	CPPFLAGS="-I $INSTALL_LOCATION/include" LDFLAGS="-L$INSTALL_LOCATION/lib" ./configure --prefix=$INSTALL_LOCATION
 	make -j
 	make install
