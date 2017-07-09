@@ -35,7 +35,6 @@ case "$1" in
 		install_vim
 		install_curl
 		install_git
-		install_thefuck
 		install_virtualenv
 		;;
 	vim)
@@ -46,9 +45,6 @@ case "$1" in
 		;;
 	git)
 		install_git
-		;;
-	thefuck)
-		install_thefuck
 		;;
 	virtualenv)
 		install_virtualenv
