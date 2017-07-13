@@ -6,6 +6,7 @@
 	path = vim
 	url = https://github.com/vim/vim.git
 	branch = master
+	ignore = dirty
 [submodule "curl"]
 	path = curl
 	url = https://github.com/curl/curl.git
