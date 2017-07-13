@@ -27,6 +27,14 @@ install_git () {
 	make install
 }
 
+install_mosh () {
+	cd $SOURCES/mosh/
+	./autogen.sh
+	./configure --prefix=$INSTALL_LOCATION
+	make -j
+	make install
+}
+
 install_virtualenv () {
 	pip3 install --user virtualenv --upgrade
 }
@@ -36,6 +44,7 @@ case "$1" in
 		install_vim
 		install_curl
 		install_git
+		install_mosh
 		install_virtualenv
 		;;
 	vim)
@@ -46,6 +55,9 @@ case "$1" in
 		;;
 	git)
 		install_git
+		;;
+	mosh)
+		install_mosh
 		;;
 	virtualenv)
 		install_virtualenv
